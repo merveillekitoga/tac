@@ -11,7 +11,7 @@ Cette première analyse a révélé plusieurs problèmes :
 - **Les résultats changeaient à chaque exécution.** Le KMeans n'avait pas de graine fixe : deux exécutions identiques donnaient des découpages différents.
 
 ### Améliorations
-
+ 
 Pour corriger ces problèmes, j'ai modifié le code en trois endroits :
 - **La fonction de prétraitement** : la ponctuation est retirée avec `str.maketrans`, puis seuls les mots alphabétiques de plus de 2 lettres sont gardés. Les nombres et la plupart des fragments d'OCR disparaissent.
 - **La reproductibilité** : le KMeans reçoit `random_state=0` et `n_init=10`. Chaque exécution donne alors le même résultat.
